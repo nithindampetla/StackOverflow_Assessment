@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
- 
+    
+    @State var loading: Bool = false
+    @ObservedObject var questionsList = QuestionsState()
+    
     var body: some View {
         
-        Text("Loading")
-        
+        VStack {
+            if questionsList.isLoading {
+                Text("Loading")
+            } else {
+                Text("Loaded")
+            }
+        }
+        .onAppear {
+            self.questionsList.getQuestions()
+        }
     }
 }
 
