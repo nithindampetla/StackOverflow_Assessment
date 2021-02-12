@@ -1,7 +1,7 @@
 # StackOverflow_Assessment
 
-This is an iOS assessment for HCA and I used swiftUI to develop logic for this requirement. 
+This repo contains SwiftUI logic for an assessment for HCA. 
 
-I was asked to make an API call to StackOverflow and fetch the questions that:
+This project is responsible to make an API call to StackOverflow and fetch the questions that:
  - Have an accepted answer, and
  - contain more that one answer. 
