@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var loading: Bool = false
     @ObservedObject var questionsList = QuestionsState()
     
     var body: some View {
@@ -18,7 +17,13 @@ struct ContentView: View {
             if questionsList.isLoading {
                 Text("Loading")
             } else {
-                Text("Loaded")
+                if self.questionsList.questions != nil {
+                    List(self.questionsList.questions!, id: \.id) { question in
+                        QuestionView(question: question)
+                    }
+                } else {
+                    Text("No questions to display")
+                }
             }
         }
         .onAppear {
