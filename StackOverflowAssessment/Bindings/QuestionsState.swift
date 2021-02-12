@@ -21,8 +21,9 @@ class QuestionsState: ObservableObject {
             guard let self = self else { return }
             
             switch result {
-            case .success(let questionReponse):
-                self.questions = questionReponse.questions
+            case .success(var questionResponse):
+                questionResponse.questions.removeAll { $0.acceptedId == nil || $0.answerCount < 2 }
+                self.questions = questionResponse.questions
                 self.isLoading = false
             case .failure(let error):
                 self.error = error as NSError
