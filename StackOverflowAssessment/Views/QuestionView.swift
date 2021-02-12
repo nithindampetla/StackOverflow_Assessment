@@ -16,15 +16,15 @@ struct QuestionView: View {
             
             HStack {
                 Text(question.name)
-                    .font(Font.custom("AvenirNext-Bold", size: 20))
+                    .font(Font.avenirNextBold(size: 20))
                     .minimumScaleFactor(0.6)
-                    .foregroundColor(Color(#colorLiteral(red: 0.06151095394, green: 0.1732000512, blue: 0.2506391181, alpha: 1)))
+                    .foregroundColor(Color.customBlack)
                 
                 Spacer()
                 
                 Image(systemName: "checkmark")
-                    .font(Font.custom("AvenirNext-Bold", size: 20))
-                    .foregroundColor(Color(#colorLiteral(red: 0.07058823529, green: 0.5019607843, blue: 0.1254901961, alpha: 1)))
+                    .font(Font.avenirNextBold(size: 20))
+                    .foregroundColor(Color.customGreen)
                     .padding(.trailing, 5)
             }
             
@@ -38,8 +38,8 @@ struct QuestionView: View {
                             .font(.footnote)
                             .padding([.leading, .trailing], 8)
                             .padding([.top, .bottom], 3)
-                            .background(Color(#colorLiteral(red: 0.7840602176, green: 0.9202123092, blue: 0.9827222842, alpha: 1)))
-                            .foregroundColor(Color(#colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)))
+                            .background(Color.customWhite)
+                            .foregroundColor(Color.customBlack)
                             .minimumScaleFactor(0.6)
                             .frame(height: 20)
                     }
@@ -50,27 +50,25 @@ struct QuestionView: View {
                 
                 HStack {
                     Text("Asked:")
-                        .font(Font.custom("Avenir-Medium", size: 11))
-                        .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
+                        .font(Font.avenirMedium(size: 11))
+                        .foregroundColor(Color.customBlack)
                     
                     Text(question.dateText)
-                        .font(Font.custom("AvenirNext-Bold", size: 13))
-                        .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
-                    
-                    
+                        .font(Font.avenirNextBold(size: 13))
+                        .foregroundColor(Color.customBlack)
                 }
                 
                 Spacer()
                 
                 HStack {
                     Text("Answers:")
-                        .font(Font.custom("Avenir-Medium", size: 11))
-                        .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
+                        .font(Font.avenirMedium(size: 11))
+                        .foregroundColor(Color.customBlack)
                         .minimumScaleFactor(0.6)
                     
                     Text("\(question.answerCount)")
-                        .font(Font.custom("AvenirNext-Bold", size: 13))
-                        .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
+                        .font(Font.avenirNextBold(size: 13))
+                        .foregroundColor(Color.customBlack)
                 }
             }
             .padding(.top, 5)

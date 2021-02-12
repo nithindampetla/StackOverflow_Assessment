@@ -25,6 +25,7 @@ struct Question: Codable {
         guard let owner = self.owner else {
             return "No username"
         }
+        
         return owner.name
     }
     
@@ -37,14 +38,6 @@ struct Question: Codable {
         case tags = "tags"
         case owner = "owner"
     }
-}
-
-class Utils {
-    static let dateFormatterPrint: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd, yyyy"
-        return dateFormatter
-    }()
 }
 
 struct Owner: Codable {

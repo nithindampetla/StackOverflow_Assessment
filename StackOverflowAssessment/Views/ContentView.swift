@@ -15,7 +15,9 @@ struct ContentView: View {
         
         VStack {
             if questionsList.isLoading {
-                Text("Loading")
+                Text("Loading...")
+                    .font(Font.avenirNextBold(size: 20))
+                    .foregroundColor(Color.customBlack)
             } else {
                 if self.questionsList.questions != nil {
                     List(self.questionsList.questions!, id: \.id) { question in
