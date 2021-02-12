@@ -15,10 +15,10 @@ struct QuestionView: View {
         VStack(alignment: .leading) {
             
             HStack {
-                Text("Chakravarthy Dampetla")
+                Text(question.name)
                     .font(Font.custom("AvenirNext-Bold", size: 20))
                     .minimumScaleFactor(0.6)
-                    .foregroundColor(Color(#colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)))
+                    .foregroundColor(Color(#colorLiteral(red: 0.06151095394, green: 0.1732000512, blue: 0.2506391181, alpha: 1)))
                 
                 Spacer()
                 
@@ -28,34 +28,24 @@ struct QuestionView: View {
                     .padding(.trailing, 5)
             }
             
-            Text("This is an example of the question. Also, I am trying to focus on creating three lines here. So adding another line to this.")
+            Text(question.title)
                 .font(.body)
                 .padding([.top, .bottom], 1)
-            
-            HStack {
-                Text("iOS")
-                    .font(.footnote)
-                    .padding([.leading, .trailing], 8)
-                    .padding([.top, .bottom], 3)
-                    .background(Color(#colorLiteral(red: 0.7840602176, green: 0.9202123092, blue: 0.9827222842, alpha: 1)))
-                    .foregroundColor(Color(#colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)))
-                    
-                
-                Text("Swift")
-                    .font(.footnote)
-                    .padding([.leading, .trailing], 8)
-                    .padding([.top, .bottom], 3)
-                    .background(Color(#colorLiteral(red: 0.7840602176, green: 0.9202123092, blue: 0.9827222842, alpha: 1)))
-                    .foregroundColor(Color(#colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)))
-                
-                Text("Xcode")
-                    .font(.footnote)
-                    .padding([.leading, .trailing], 8)
-                    .padding([.top, .bottom], 3)
-                    .background(Color(#colorLiteral(red: 0.7840602176, green: 0.9202123092, blue: 0.9827222842, alpha: 1)))
-                    .foregroundColor(Color(#colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)))
+            if question.tags != nil {
+                HStack {
+                ForEach(question.tags!, id: \.self) { tag in
+                        Text(tag)
+                            .font(.footnote)
+                            .padding([.leading, .trailing], 8)
+                            .padding([.top, .bottom], 3)
+                            .background(Color(#colorLiteral(red: 0.7840602176, green: 0.9202123092, blue: 0.9827222842, alpha: 1)))
+                            .foregroundColor(Color(#colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)))
+                            .minimumScaleFactor(0.6)
+                            .frame(height: 20)
+                    }
+                }
             }
-            
+
             HStack() {
                 
                 HStack {
@@ -63,7 +53,7 @@ struct QuestionView: View {
                         .font(Font.custom("Avenir-Medium", size: 11))
                         .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
                     
-                    Text("July 18, 2019")
+                    Text(question.dateText)
                         .font(Font.custom("AvenirNext-Bold", size: 13))
                         .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
                     
@@ -78,7 +68,7 @@ struct QuestionView: View {
                         .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
                         .minimumScaleFactor(0.6)
                     
-                    Text("12")
+                    Text("\(question.answerCount)")
                         .font(Font.custom("AvenirNext-Bold", size: 13))
                         .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
                 }
@@ -86,12 +76,12 @@ struct QuestionView: View {
             .padding(.top, 5)
             
         }
-        .padding(/*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+        .padding(.top, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
     }
 }
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(question: Question(id: 1, title: "", answers: 2, acceptedId: 0, creationDate: 1.0))
+        QuestionView(question: Question(id: 1, title: "", answerCount: 1, acceptedId: 0, creationDate: 1.0, tags: nil, owner: nil))
     }
 }
