@@ -19,6 +19,7 @@
 		1EBF300425D5E6A40021FCAA /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBF300325D5E6A40021FCAA /* Question.swift */; };
 		1EBF300C25D5E6F50021FCAA /* QuestionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBF300B25D5E6F50021FCAA /* QuestionsResponse.swift */; };
 		1EBF301125D5E7250021FCAA /* QuestionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBF301025D5E7250021FCAA /* QuestionError.swift */; };
+		1EEFDEF925D5EF49000D3B71 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEFDEF825D5EF49000D3B71 /* QuestionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		1EBF300325D5E6A40021FCAA /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		1EBF300B25D5E6F50021FCAA /* QuestionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsResponse.swift; sourceTree = "<group>"; };
 		1EBF301025D5E7250021FCAA /* QuestionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionError.swift; sourceTree = "<group>"; };
+		1EEFDEF825D5EF49000D3B71 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,15 +109,13 @@
 		1EBF2FC325D59F350021FCAA /* StackOverflowAssessment */ = {
 			isa = PBXGroup;
 			children = (
+				1EEFDEF725D5EF14000D3B71 /* Services */,
+				1EEFDEF625D5EF06000D3B71 /* Bindings */,
+				1EEFDEF225D5EE04000D3B71 /* Views */,
 				1EBF300225D5E6830021FCAA /* Models */,
-				1EBF2FC425D59F350021FCAA /* StackOverflowAssessmentApp.swift */,
-				1EBF2FC625D59F350021FCAA /* ContentView.swift */,
-				1EBF2FF325D5AB150021FCAA /* HomeView.swift */,
 				1EBF2FC825D59F3A0021FCAA /* Assets.xcassets */,
 				1EBF2FCD25D59F3A0021FCAA /* Info.plist */,
 				1EBF2FCA25D59F3A0021FCAA /* Preview Content */,
-				1EBF2FF825D5B7730021FCAA /* ApiManager.swift */,
-				1EBF2FFD25D5BCB10021FCAA /* QuestionsState.swift */,
 			);
 			path = StackOverflowAssessment;
 			sourceTree = "<group>";
@@ -154,6 +154,33 @@
 				1EBF300B25D5E6F50021FCAA /* QuestionsResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1EEFDEF225D5EE04000D3B71 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1EBF2FC625D59F350021FCAA /* ContentView.swift */,
+				1EBF2FF325D5AB150021FCAA /* HomeView.swift */,
+				1EEFDEF825D5EF49000D3B71 /* QuestionView.swift */,
+				1EBF2FC425D59F350021FCAA /* StackOverflowAssessmentApp.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1EEFDEF625D5EF06000D3B71 /* Bindings */ = {
+			isa = PBXGroup;
+			children = (
+				1EBF2FFD25D5BCB10021FCAA /* QuestionsState.swift */,
+			);
+			path = Bindings;
+			sourceTree = "<group>";
+		};
+		1EEFDEF725D5EF14000D3B71 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1EBF2FF825D5B7730021FCAA /* ApiManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +319,7 @@
 				1EBF300C25D5E6F50021FCAA /* QuestionsResponse.swift in Sources */,
 				1EBF300425D5E6A40021FCAA /* Question.swift in Sources */,
 				1EBF2FC725D59F350021FCAA /* ContentView.swift in Sources */,
+				1EEFDEF925D5EF49000D3B71 /* QuestionView.swift in Sources */,
 				1EBF2FC525D59F350021FCAA /* StackOverflowAssessmentApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
