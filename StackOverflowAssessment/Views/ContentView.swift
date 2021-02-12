@@ -19,12 +19,27 @@ struct ContentView: View {
                     .font(Font.avenirNextBold(size: 20))
                     .foregroundColor(Color.customBlack)
             } else {
-                if self.questionsList.questions != nil {
-                    List(self.questionsList.questions!, id: \.id) { question in
-                        QuestionView(question: question)
+                if questionsList.error == nil {
+                    if self.questionsList.questions != nil {
+                        List(self.questionsList.questions!, id: \.id) { question in
+                            QuestionView(question: question)
+                        }
+                    } else {
+                        Text("No questions to display")
+                            .foregroundColor(Color.customBlack)
+                            .fontWeight(.bold)
                     }
                 } else {
-                    Text("No questions to display")
+                    Text("\(questionsList.error!.localizedDescription)")
+                        .foregroundColor(Color.customBlack)
+                        .fontWeight(.bold)
+                    
+                    Button(action: {
+                        self.questionsList.getQuestions()
+                    }) {
+                        Text("Try Again")
+                            .padding(10)
+                    }
                 }
             }
         }

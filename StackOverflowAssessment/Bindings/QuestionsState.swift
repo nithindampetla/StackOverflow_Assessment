@@ -11,7 +11,7 @@ class QuestionsState: ObservableObject {
     
     @Published var questions: [Question]?
     @Published var isLoading: Bool = false
-    @Published var error: NSError?
+    @Published var error: QuestionError?
     
     func getQuestions() {
         self.questions = nil
@@ -26,7 +26,8 @@ class QuestionsState: ObservableObject {
                 self.questions = questionResponse.questions
                 self.isLoading = false
             case .failure(let error):
-                self.error = error as NSError
+                self.isLoading = false
+                self.error = error as QuestionError
             }
         }
     }
